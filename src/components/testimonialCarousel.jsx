@@ -13,15 +13,16 @@ async function fetchData(payload) {
   }
 }
 
-const TestimonialCarousel = ({ content }) => {
-  const [data, setData] = useState([]);
+const TestimonialCarousel = ({ moduleData }) => {
+  const [data, setData] = useState(moduleData || []);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const result = await fetchData("carousels");
-      setData(result);
+      if (!moduleData) {
+        const result = await fetchData("carousels");
+        setData(result);
+      }
     };
-
     fetchAPI();
   }, []);
 
@@ -39,7 +40,6 @@ const TestimonialCarousel = ({ content }) => {
 
   return (
     <div>
-      <h1>{content ? content : "Default Content"}</h1>
       <div
         id="carouselExampleCaptions"
         className="carousel slide"

@@ -31,32 +31,30 @@ function _fetchData() {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
-          return _axios["default"].get("https://dev.tii.cloud.sitefinity.com/api/default/".concat(payload, "?$select=*&$expand=*"), {
+          return _axios["default"].get("https://dev.tii.cloud.sitefinity.com/api/default/".concat(payload, "?$select=*"), {
             headers: {
               "Content-Type": "application/json"
             }
           });
         case 3:
           response = _context2.sent;
-          console.log("Response:", response);
           return _context2.abrupt("return", response.data.value);
-        case 8:
-          _context2.prev = 8;
+        case 7:
+          _context2.prev = 7;
           _context2.t0 = _context2["catch"](0);
-          console.error("Error fetching data:", _context2.t0);
           return _context2.abrupt("return", []);
-        case 12:
+        case 10:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[0, 8]]);
+    }, _callee2, null, [[0, 7]]);
   }));
   return _fetchData.apply(this, arguments);
 }
-var Education = function Education(_ref) {
+var Categories = function Categories(_ref) {
   var title = _ref.title,
-    moduleData = _ref.moduleData;
-  var _useState = (0, _react.useState)(moduleData || []),
+    categoriesData = _ref.categoriesData;
+  var _useState = (0, _react.useState)(categoriesData || []),
     _useState2 = _slicedToArray(_useState, 2),
     data = _useState2[0],
     setData = _useState2[1];
@@ -67,12 +65,12 @@ var Education = function Education(_ref) {
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              if (moduleData) {
+              if (categoriesData) {
                 _context.next = 5;
                 break;
               }
               _context.next = 3;
-              return fetchData("educationCenters");
+              return fetchData("categories");
             case 3:
               result = _context.sent;
               setData(result);
@@ -88,33 +86,6 @@ var Education = function Education(_ref) {
     }();
     fetchAPI();
   }, []);
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("h1", null, title ? title : "Default Title"), /*#__PURE__*/_react["default"].createElement("div", {
-    className: "row cardList"
-  }, data.length > 0 && data.map(function (item, index) {
-    return /*#__PURE__*/_react["default"].createElement("div", {
-      className: "col-md-4 mb-4",
-      key: index
-    }, /*#__PURE__*/_react["default"].createElement("div", {
-      className: "card h-100"
-    }, /*#__PURE__*/_react["default"].createElement("div", {
-      className: "imageWrapper"
-    }, /*#__PURE__*/_react["default"].createElement("img", {
-      src: "https://dev.tii.cloud.sitefinity.com/" + item.Image[0].Url,
-      alt: item.Image[0].AlternativeText,
-      width: item.Image[0].Width,
-      height: item.Image[0].Height
-    })), /*#__PURE__*/_react["default"].createElement("div", {
-      className: "card-body"
-    }, /*#__PURE__*/_react["default"].createElement("h5", {
-      className: "card-title fw-bold"
-    }, item.Title), /*#__PURE__*/_react["default"].createElement("p", {
-      className: "card-text "
-    }, item.SubTitle), item.DetailPageUrl && /*#__PURE__*/_react["default"].createElement("button", {
-      className: "btn moreLink text-decoration-none",
-      onClick: function onClick() {
-        return handleClick(JSON.parse(item.DetailPageUrl)[0].href);
-      }
-    }, "Read More"))));
-  })));
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", null, title ? title : "Default Title"));
 };
-var _default = exports["default"] = Education;
+var _default = exports["default"] = Categories;

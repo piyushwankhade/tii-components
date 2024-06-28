@@ -5,10 +5,17 @@ import axios from "axios";
 async function fetchData(payload) {
   try {
     const response = await axios.get(
-      `https://dev.tii.cloud.sitefinity.com/api/default/${payload}?$select=*&$expand=*`
+      `https://dev.tii.cloud.sitefinity.com/api/default/${payload}?$select=*&$expand=*`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
+    console.log("Response:", response);
     return response.data.value;
   } catch (error) {
+    console.error("Error fetching data:", error);
     return [];
   }
 }

@@ -1,13 +1,13 @@
 {
-  "name": "tii-common-components",
-  "version": "1.0.0",
+  "name": "@piyushwankhade/tii-components",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist",
     "prepare": "npm run build"
   },
   "keywords": [],
-  "author": "piyush.wankhade@fulcrumdigital.com",
+  "author": "piyushwankhade01@gmail.com",
   "license": "ISC",
   "description": "",
   "peerDependencies": {

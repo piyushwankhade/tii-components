@@ -48,8 +48,8 @@ function _fetchData() {
   return _fetchData.apply(this, arguments);
 }
 var TestimonialCarousel = function TestimonialCarousel(_ref) {
-  var content = _ref.content;
-  var _useState = (0, _react.useState)([]),
+  var moduleData = _ref.moduleData;
+  var _useState = (0, _react.useState)(moduleData || []),
     _useState2 = _slicedToArray(_useState, 2),
     data = _useState2[0],
     setData = _useState2[1];
@@ -60,12 +60,16 @@ var TestimonialCarousel = function TestimonialCarousel(_ref) {
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
+              if (moduleData) {
+                _context.next = 5;
+                break;
+              }
+              _context.next = 3;
               return fetchData("carousels");
-            case 2:
+            case 3:
               result = _context.sent;
               setData(result);
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -91,7 +95,7 @@ var TestimonialCarousel = function TestimonialCarousel(_ref) {
       return prevIndex === data.length - 1 ? 0 : prevIndex + 1;
     });
   };
-  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("h1", null, content ? content : "Default Content"), /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     id: "carouselExampleCaptions",
     className: "carousel slide",
     "data-bs-touch": "false",
