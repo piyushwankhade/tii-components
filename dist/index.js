@@ -30,11 +30,11 @@ Object.defineProperty(exports, "MyComponent", {
 Object.defineProperty(exports, "TestimonialCarousel", {
   enumerable: true,
   get: function get() {
-    return _TestimonialCarousel["default"];
+    return _testimonialCarousel["default"];
   }
 });
 var _MyComponent = _interopRequireDefault(require("./components/MyComponent"));
-var _TestimonialCarousel = _interopRequireDefault(require("./components/TestimonialCarousel"));
+var _testimonialCarousel = _interopRequireDefault(require("./components/testimonialCarousel"));
 var _education = _interopRequireDefault(require("./components/education"));
 var _headerComponent = _interopRequireDefault(require("./components/headerComponent"));
 var _categories = _interopRequireDefault(require("./components/categories"));
