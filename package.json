@@ -1,9 +1,9 @@
 {
   "name": "@piyushwankhade/tii-components",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist && xcopy src\\components\\*.css dist\\components\\ /Y",
     "prepare": "npm run build"
   },
   "keywords": [],
@@ -27,5 +27,8 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
   }
 }

@@ -1,0 +1,26 @@
+/* TestimonialList.css */
+
+.testimonial-card {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .testimonial-card h3 {
+    color: blue;
+    font-size: 20px;
+  }
+  
+  .testimonial-card .desc {
+    line-height: 1.5;
+    font-style: italic;
+  }
+  
+  .testimonial-card .name {
+    color: green;
+  }
+  
+  .testimonial-card .date {
+    color: red;
+  }
+  
