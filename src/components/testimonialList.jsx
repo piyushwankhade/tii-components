@@ -39,19 +39,27 @@ const TestimonialList = ({ moduleData }) => {
     );
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+  };
+
   return (
     <div>
       <div>
         {data.length > 0 &&
           data.map((item, index) => (
             <div key={index} className="testimonial-card">
-              <h3>{item.Title}</h3>
-              <p
+              <div className="title">{item.Title}</div>
+              <div
                 className="desc"
                 dangerouslySetInnerHTML={{ __html: item.Description }}
               />
-              <h2 className="name">{item.Name}</h2>
-              <p className="date">{item.Date}</p>
+              <div className="name">{item.Name}</div>
+              <div className="date">{formatDate(item.Date)}</div>
             </div>
           ))}
       </div>

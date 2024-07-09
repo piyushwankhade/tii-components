@@ -1,6 +1,6 @@
 {
   "name": "@piyushwankhade/tii-components",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src --out-dir dist && xcopy src\\components\\*.css dist\\components\\ /Y",

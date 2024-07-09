@@ -97,20 +97,29 @@ var TestimonialList = function TestimonialList(_ref) {
       return prevIndex === data.length - 1 ? 0 : prevIndex + 1;
     });
   };
+  var formatDate = function formatDate(dateString) {
+    var date = new Date(dateString);
+    var month = String(date.getMonth() + 1).padStart(2, "0");
+    var day = String(date.getDate()).padStart(2, "0");
+    var year = date.getFullYear();
+    return "".concat(month, "/").concat(day, "/").concat(year);
+  };
   return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", null, data.length > 0 && data.map(function (item, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       key: index,
       className: "testimonial-card"
-    }, /*#__PURE__*/_react["default"].createElement("h3", null, item.Title), /*#__PURE__*/_react["default"].createElement("p", {
+    }, /*#__PURE__*/_react["default"].createElement("div", {
+      className: "title"
+    }, item.Title), /*#__PURE__*/_react["default"].createElement("div", {
       className: "desc",
       dangerouslySetInnerHTML: {
         __html: item.Description
       }
-    }), /*#__PURE__*/_react["default"].createElement("h2", {
+    }), /*#__PURE__*/_react["default"].createElement("div", {
       className: "name"
-    }, item.Name), /*#__PURE__*/_react["default"].createElement("p", {
+    }, item.Name), /*#__PURE__*/_react["default"].createElement("div", {
       className: "date"
-    }, item.Date));
+    }, formatDate(item.Date)));
   })));
 };
 var _default = exports["default"] = TestimonialList;
